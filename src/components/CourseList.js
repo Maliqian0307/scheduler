@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
-import {getCourseTerm } from '../utilities/times';
+import {getCourseTerm, terms } from '../utilities/times';
 import {Course} from './Course';
 
 
-const terms = { F: 'Fall', W: 'Winter', S: 'Spring'};
 const TermButton = ({term, setTerm, checked}) => (
     <>
       <input type="radio" id={term} className="btn-check" autoComplete="off" checked={checked}

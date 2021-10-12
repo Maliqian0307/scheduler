@@ -1,6 +1,9 @@
 import React from 'react';
-import { hasConflict, getCourseTerm, getCourseNumber } from '../utilities/times';
+import { hasConflict, getCourseTerm  } from '../utilities/times';
 
+export const getCourseNumber = course => (
+    course.id.slice(1, 4)
+  );
 const toggle = (x, lst) => (
     lst.includes(x) ? lst.filter(y => y !== x) : [x, ...lst]
   );
