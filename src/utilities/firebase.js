@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, onValue, ref, set } from "firebase/database";
 
 
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,6 +25,9 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
 
+export const setData = (path, value) => (
+  set(ref(database, path), value)
+);
 export const useData = (path, transform) => {
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
